@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+	<meta charset="utf-8" />
+	<title>Fifton - 
+			{% block title_block %} 
+			Fifton Academy
+			{% endblock %}
+
+	</title>
+</head>
+<body>
+	<div>
+	{% block body_block %}
+	<h3>Hey, here's everything you need to know about Fifton</h3>
+	{% endblock %}
+	</div>
+	<div>
+		<ul>
+		<a href="/fifton/about/">About</a><br />
+		<a href="/fifton/add_userinfo/">Add info</a><br />
+		</ul>
+	</div>
+</body>
+</html>

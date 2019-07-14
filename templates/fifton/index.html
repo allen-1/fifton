@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Fifton Academy</title>
+</head>
+<body>
+<h1>WELCOME</h1>
+	<div>
+		This is the fifton homepage
+	</div>
+	<div>
+		<img src="{% static "images/fiftonfilm.png" %}" alt="Picture Of Fifton"/><br />
+		<strong>{{ message }}</strong><br />
+		<a href="/fifton/about/">About</a><br />
+		<a href="/fifton/add_userinfo/">Add info</a><br />
+	</div>
+</body>
+</html>
