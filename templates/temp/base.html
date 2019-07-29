@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en" class="full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+        <!--<link href="http://localhost:5000/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Fifton | {% block title_block %}{% endblock %}</title>
+ 
+</head>
+
+<body>
+
+
+
+
+  <header class=" top-left" style="width: 100%">
+    <div class="container navigation-container">
+        <div class="logo-div">
+
+            <div class="logo ">
+                <span class="dark light" style="display: inline-block; padding: 0 12px ">Fifton</span><span class="primary">Academy</span>
+            </div>
+
+        </div>
+        <nav class="navbar" id="navigation">
+            <ul class="unstyled">
+                <li class="nav-item" ><a  id="link1" href="/" class="link active">Home</a></li>
+                <li class="nav-item"><a id="link2" href="#services" class="link">Services</a></li>
+                <li class="nav-item"><a id="link3" href="{% url 'about' %}" class="link">About us</a></li>
+                <li class="nav-item"><a id="link4" href="#contact" class="link">Contact us</a></li>
+            </ul>
+        </nav>
+        <a id="toggle" href="#" class="btn link light" style="background: none; border:none">
+            <i class="fas fa-bars"></i>
+        </a>
+    </div>
+    
+</header>
+{% block body_block %}
+
+    hdhdhd
+
+{% endblock %}
+
+<footer class="dark text-white" style="padding: 60px 30px">
+<div class="container">
+    <div  class="center" style="justify-content: space-around">
+            <div class="logo-div" id="contact">
+
+                <div class="logo ">
+                    <span class="dark light" style="display: inline-block; padding: 0 12px ">Fifton</span><span class="primary">Academy</span>
+                </div>
+                <p id="info-address">
+                    Some Bogus Location that
+                    identifies service's location
+                </p>
+                <p id="info-mail">
+                  <a href="mailto:allenagozie@gmail.com" class="link light"> Mail us <i class="fas fa-at"></i> allenagozie@gmail.com</a>
+                </p>
+                <!--<div class="info-numbers center">-->
+                    <!--<ul class="unstyled">-->
+                        <!--<li class="item"><a class="link" href="tel:+123456789">+23408077886</a></li>-->
+                        <!--<li class="item"><a class="link" href="tel:+123456789">+23408077886</a></li>-->
+                        <!--<li class="item"><a class="link" href="tel:+123456789">+23408077886</a></li>-->
+                    <!--</ul>-->
+
+                <!--</div>-->
+            </div>
+            <nav >
+                <ul class="unstyled">
+                    <li class="nav-item"><a href="/" class="link light">Quick Links</a></li>
+                    <li class="nav-item"><a href="#services" class="link light">Photography School</a></li>
+                    <li class="nav-item"><a href="/about" class="link light">Dance School</a></li>
+                    <li class="nav-item"><a href="#contact" class="link light">Film School</a></li>
+                </ul>
+            </nav>
+    </div>
+    <div class="social center" style="width: 60%; margin: 0 auto; justify-content: space-evenly">
+        <a href="% facebook_link%" class="link primary">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="%twitter_link%" class="link primary">
+            <i class="fab fa-twitter-square"></i>
+        </a>
+        <a href="%ig_link%" class="link primary">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+</div>
+</footer>
+
+  <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
+  <script>
+    let toggle = $("#toggle");
+    let nav = $("#navigation");
+    toggle.click(() => {
+      toggle.toggleClass('active')
+      nav.toggleClass('visible')
+    })
+      nav.click((e) => {
+        if(e.target.id) {
+          toggle.toggleClass('active')
+          nav.toggleClass('visible')
+
+        }
+      })
+  </script>
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>

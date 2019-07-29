@@ -1,13 +1,28 @@
+import smtplib, ssl 
 from django.shortcuts import render
 from django.http import HttpResponse 
 from fifton.forms import UserInfoForms, filmacadForms, musicacadForms, photoacadForms
 
+sender_email = "allenagozie@gmail.com"
+receiver_email = "ericamettaz@gmail.com"
+message = """\
+Subject: PY test.
+
+
+Did you receive this?
+
+"""
+
+port = 465 
+password = input("type your password and press enter: ")
+context = ssl.create_default_context()
+
 def index(request):
 	context_dict = {'message': "Film, Music, Art..."}
-	return render(request, 'fifton/index.html', context=context_dict)
+	return render(request, 'temp/home.html', context=context_dict)
 
 def about(request):
-	return HttpResponse('This is what fifton is about')
+	return render(request, 'temp/about.html', context={})
 
 def add_userinfo(request):
 	form = UserInfoForms()
@@ -15,6 +30,9 @@ def add_userinfo(request):
 		form = UserInfoForms(request.POST)
 		if form.is_valid():
 			form.save(commit=True)
+			with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+				server.login("allenagozie@gmail.com", password)
+				server.sendmail(sender_email, receiver_email, message)
 			return index(request)
 		else:
 			print(form.errors)

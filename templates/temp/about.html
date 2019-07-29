@@ -1,0 +1,12 @@
+{% extends 'temp/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	About Fifton
+{% endblock %}
+
+{% block body_block %}
+	<h4>This is all the information you need to know about fifton</h4>
+	<br><br><br><br>
+	<p>Click here to go home <a href="{% url 'index' %}">Home</a></p>
+{% endblock %}

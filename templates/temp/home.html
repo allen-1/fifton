@@ -1,59 +1,17 @@
-<!DOCTYPE html>
+{% extends 'temp/base.html' %}
+{% load staticfiles %}
 
-<html lang="en" class="full">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-        <!--<link href="http://localhost:5000/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
-    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-    <title>Fifton | {% block title_block %} Home {% endblock %}</title>
- 
-</head>
-
-<body>
-
-
+{% block title_block %}
+	Index
+{% endblock %}
 
 {% block body_block %}
-  <header class=" top-left" style="width: 100%">
-    <div class="container navigation-container">
-        <div class="logo-div">
-
-            <div class="logo ">
-                <span class="dark light" style="display: inline-block; padding: 0 12px ">Fifton</span><span class="primary">Academy</span>
-            </div>
-
-        </div>
-        <nav class="navbar" id="navigation">
-            <ul class="unstyled">
-                <li class="nav-item" ><a  id="link1" href="/" class="link active">Home</a></li>
-                <li class="nav-item"><a id="link2" href="#services" class="link">Services</a></li>
-                <li class="nav-item"><a id="link3" href="/about" class="link">About us</a></li>
-                <li class="nav-item"><a id="link4" href="#contact" class="link">Contact us</a></li>
-            </ul>
-        </nav>
-        <a id="toggle" href="#" class="btn link light" style="background: none; border:none">
-            <i class="fas fa-bars"></i>
-        </a>
-    </div>
-}
-    
-</header>
-
-
-
-
-
 <div class="content flex full">
-    <div class="haf" id="bg-image">
+    <!-- <div class="haf" id="bg-image">
 
+    </div> -->
+    <div id="bg-image" class ="haf" style="background-image: url('{% static 'images/08163e343c7c639b173b63f61c401d1c.jpg/' %}">
+      
     </div>
     <div class="haf center " id="intro">
         <div class="interaction" style="width: 80%">
@@ -84,7 +42,7 @@
            <div class="card-column flex" id="services">
                 <div class="card shadow" id="camera">
 
-                    <img class="card-img-top" src="87aeea60d65e9832ba12898fca2618b7.jpg">
+                    <img class="card-img-top" src="{% static 'images/87aeea60d65e9832ba12898fca2618b7.jpg' %}">
                   <div class="card-body ">
                     <h4 class="card-title">Photography School</h4>
                     <p class="card-text">
@@ -100,7 +58,7 @@
 
                 <div class="card shadow" id="dance">
 
-                         <img class="card-img-top" src="75c1aa75c812ae82915ab5befd831435.jpg">
+                         <img class="card-img-top" src="{% static 'images/75c1aa75c812ae82915ab5befd831435.jpg' %}">
                         <div class="card-body">
                           <h4 class="card-title">Dance School</h4>
                             <p class="card-text">
@@ -118,7 +76,7 @@
 
                       <div class="card shadow" id="film">
 
-                          <img class="card-img-top" src="be69607ed1eda954bedb0386ff098827.jpg">
+                          <img class="card-img-top" src="{% static 'images/be69607ed1eda954bedb0386ff098827.jpg' %}">
                             <div class="card-body">
                               <h4 class="card-title">Film School</h4>
                                 <p class="card-text">
@@ -202,75 +160,4 @@
 
       </div>
   </div>
-<footer class="dark text-white" style="padding: 60px 30px">
-<div class="container">
-    <div  class="center" style="justify-content: space-around">
-            <div class="logo-div" id="contact">
-
-                <div class="logo ">
-                    <span class="dark light" style="display: inline-block; padding: 0 12px ">Fifton</span><span class="primary">Academy</span>
-                </div>
-                <p id="info-address">
-                    Some Bogus Location that
-                    identifies service's location
-                </p>
-                <p id="info-mail">
-                  <a href="mailto:someone@example.com" class="link light"> Mail us <i class="fas fa-at"></i> service.name@domain.com</a>
-                </p>
-                <!--<div class="info-numbers center">-->
-                    <!--<ul class="unstyled">-->
-                        <!--<li class="item"><a class="link" href="tel:+123456789">+23408077886</a></li>-->
-                        <!--<li class="item"><a class="link" href="tel:+123456789">+23408077886</a></li>-->
-                        <!--<li class="item"><a class="link" href="tel:+123456789">+23408077886</a></li>-->
-                    <!--</ul>-->
-
-                <!--</div>-->
-            </div>
-            <nav >
-                <ul class="unstyled">
-                    <li class="nav-item"><a href="/" class="link light">Quick Links</a></li>
-                    <li class="nav-item"><a href="#services" class="link light">Photography School</a></li>
-                    <li class="nav-item"><a href="/about" class="link light">Dance School</a></li>
-                    <li class="nav-item"><a href="#contact" class="link light">Film School</a></li>
-                </ul>
-            </nav>
-    </div>
-    <div class="social center" style="width: 60%; margin: 0 auto; justify-content: space-evenly">
-        <a href="% facebook_link%" class="link primary">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="%twitter_link%" class="link primary">
-            <i class="fab fa-twitter-square"></i>
-        </a>
-        <a href="%ig_link%" class="link primary">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </div>
-</div>
-</footer>
-
-  <script
-          src="https://code.jquery.com/jquery-3.4.1.min.js"
-          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-          crossorigin="anonymous"></script>
-  <script>
-    let toggle = $("#toggle");
-    let nav = $("#navigation");
-    toggle.click(() => {
-      toggle.toggleClass('active')
-      nav.toggleClass('visible')
-    })
-      nav.click((e) => {
-        if(e.target.id) {
-          toggle.toggleClass('active')
-          nav.toggleClass('visible')
-
-        }
-      })
-  </script>
-<script type="text/javascript" src="index.js"></script>
-
 {% endblock %}
-</body>
-
-</html>

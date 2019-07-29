@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+{% extends 'fifton/base.html' %}
 {% load staticfiles %}
-<html>
-<head>
-	<title>Fifton Academy</title>
-</head>
-<body>
+
+{% block title_block %}
+Our Home
+{% endblock %}
+
+
 <h1>WELCOME</h1>
 	<div>
 		This is the fifton homepage
@@ -15,5 +16,3 @@
 		<a href="/fifton/about/">About</a><br />
 		<a href="/fifton/add_userinfo/">Add info</a><br />
 	</div>
-</body>
-</html>
